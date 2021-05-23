@@ -8,7 +8,7 @@ from .serializers import PostSerializer, CategorySerializer
 @csrf_exempt
 def post_list(request):
     """
-    List all code snippets, or create a new snippet.
+    create a code blog
     """
     if request.method == 'GET':
         posts =Post.objects.all()
@@ -26,7 +26,7 @@ def post_list(request):
 @csrf_exempt
 def post_detail(request, pk):
     """
-    Retrieve, update or delete a code snippet.
+    Retrieve, update or delete a code blog.
     """
     try:
         post = Post.objects.get(pk=pk)
